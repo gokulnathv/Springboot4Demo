@@ -26,12 +26,21 @@ public class Books {
 	
 	private String firstName;
 	private String lastName;
+	private String title;
 	
 	@ManyToMany
 	@JoinTable(name = "author_books", joinColumns = @JoinColumn(name = "books_id"), 
 		inverseJoinColumns = @JoinColumn(name="author_id"))
 	private Set<Author> authors = new HashSet<>();
 	
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
 	@ManyToOne
 	private Publisher publisher;
 	 
@@ -47,10 +56,11 @@ public class Books {
 		super();
 	}
 	
-	public Books(String firstName, String lastName) {
+	public Books(String firstName, String lastName, String title) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.title = title;
 	}
 	
 	public Long getId() {
@@ -84,7 +94,7 @@ public class Books {
 
 	@Override
 	public String toString() {
-		return "Books [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", authors=" + authors + "]";
+		return "Books [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
 
 	@Override
@@ -109,6 +119,4 @@ public class Books {
 		return true;
 	}
 	
-	
-
 }

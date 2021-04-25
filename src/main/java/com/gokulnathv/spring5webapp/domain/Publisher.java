@@ -20,6 +20,7 @@ public class Publisher {
 	private String city;
 	private String state;
 	private Long zip;
+	private String name;
 	
 	@OneToMany
 	@JoinColumn(name="publisher_id")
@@ -30,12 +31,21 @@ public class Publisher {
 		super();
 	}
 
-	public Publisher(String addressLine1, String city, String state, Long zip) {
+	public Publisher(String addressLine1, String city, String state, Long zip, String name) {
 		super();
 		this.addressLine1 = addressLine1;
 		this.city = city;
 		this.state = state;
 		this.zip = zip;
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getAddressLine1() {

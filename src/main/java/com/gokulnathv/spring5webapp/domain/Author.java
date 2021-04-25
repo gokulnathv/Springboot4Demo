@@ -74,7 +74,7 @@ public class Author {
 	
 	@Override
 	public String toString() {
-		return "Author [id=" + id + ", title=" + title + ", isbn=" + isbn + ", books=" + books + "]";
+		return "Author [id=" + id + ", title=" + title + ", isbn=" + isbn + "]";
 	}
 
 	@Override
